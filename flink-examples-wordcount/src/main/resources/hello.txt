@@ -1,0 +1,16 @@
+hello world
+hello flink
+hello spark
+hello java
+hello spring
+hello scala
+hello hadoop
+hello storm
+hello kafka
+hello mysql
+how are you
+fine thank you
+that's right
+hello tony
+say hello is not enough
+haha hello
