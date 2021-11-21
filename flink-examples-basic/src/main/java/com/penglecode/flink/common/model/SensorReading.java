@@ -22,7 +22,7 @@ public class SensorReading {
     /**
      * 测点值
      */
-    private String metricValue;
+    private Double metricValue;
 
     /**
      * 时间戳
@@ -32,7 +32,7 @@ public class SensorReading {
     public SensorReading() {
     }
 
-    public SensorReading(String deviceId, String metricCode, String metricValue) {
+    public SensorReading(String deviceId, String metricCode, Double metricValue) {
         this.deviceId = deviceId;
         this.metricCode = metricCode;
         this.metricValue = metricValue;
@@ -55,11 +55,11 @@ public class SensorReading {
         this.metricCode = metricCode;
     }
 
-    public String getMetricValue() {
+    public Double getMetricValue() {
         return metricValue;
     }
 
-    public void setMetricValue(String metricValue) {
+    public void setMetricValue(Double metricValue) {
         this.metricValue = metricValue;
     }
 
@@ -69,6 +69,20 @@ public class SensorReading {
 
     public void setTimestamp(Long timestamp) {
         this.timestamp = timestamp;
+    }
+
+    public static SensorReading valueOf(String line) {
+        try {
+            if(line != null) {
+                String[] values = line.split(",");
+                if(values.length == 3) {
+                    return new SensorReading(values[0], values[1], Double.valueOf(values[2]));
+                }
+            }
+        } catch (NumberFormatException e) {
+            //ignore
+        }
+        return null;
     }
 
     @Override

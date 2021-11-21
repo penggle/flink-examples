@@ -29,10 +29,11 @@ public class SourceFromCollectionExample {
         //3、从自增序列中读取数据源
         DataStream<Long> dataStreamSource2 = env.fromSequence(1, 100);
 
+        //4、输出数据流处理结果
         dataStreamSource1.print("source1");
         dataStreamSource2.print("source2");
 
-        //4、执行流处理任务
+        //5、执行流处理任务
         env.execute(StreamGraphGenerator.DEFAULT_STREAMING_JOB_NAME);
     }
 
@@ -42,7 +43,7 @@ public class SourceFromCollectionExample {
     private static List<SensorReading> getTempSensorReadings() {
         return new Random().doubles(30,40)
                 .limit(100)
-                .mapToObj(temp -> new SensorReading("sensor001", "temperature", String.format("%.2f", temp)))
+                .mapToObj(temp -> new SensorReading("sensor001", "temperature", Double.valueOf(String.format("%.2f", temp))))
                 .collect(Collectors.toList());
     }
 

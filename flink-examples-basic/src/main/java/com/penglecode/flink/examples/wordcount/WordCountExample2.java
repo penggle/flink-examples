@@ -1,6 +1,5 @@
 package com.penglecode.flink.examples.wordcount;
 
-import org.apache.flink.api.java.DataSet;
 import org.apache.flink.api.java.tuple.Tuple2;
 import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
@@ -20,7 +19,7 @@ public class WordCountExample2 {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         env.setParallelism(4); //设置流处理的全局并行度
         //2、从hello.txt文件中读取数据集
-        DataStream<String> inputDataStream = env.readTextFile(WordCountExample2.class.getResource("/hello.txt").toString());
+        DataStream<String> inputDataStream = env.readTextFile(WordCountExample2.class.getResource("/data/hello.txt").toString());
         //3、对数据流进行处理，具体来说就是将每行数据进行分词，收集<word,1>这样的二元组(最小粒度的二元组)
         DataStream<Tuple2<String,Integer>> resultStream = inputDataStream.flatMap(new WordTokenizer())
                 //这里的数字参数指的就是flink Tuple元组类型的泛型位置(见注释)

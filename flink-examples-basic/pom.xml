@@ -8,9 +8,9 @@
         <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>flink-examples-wordcount</artifactId>
-    <name>flink-examples-wordcount</name>
-    <description>flink入门简单示例 - wordcount</description>
+    <artifactId>flink-examples-basic</artifactId>
+    <name>flink-examples-basic</name>
+    <description>flink入门基础示例</description>
 
     <dependencies>
         <!-- flink-java -->
@@ -19,7 +19,7 @@
 			<artifactId>flink-java</artifactId>
 		</dependency>
 		
-		<!-- flink-streaming-java -->
+		<!-- flink-basic-java -->
 		<dependency>
 			<groupId>org.apache.flink</groupId>
 			<artifactId>flink-streaming-java_${scala.binary.version}</artifactId>
@@ -29,6 +29,12 @@
         <dependency>
             <groupId>org.apache.flink</groupId>
             <artifactId>flink-clients_${scala.binary.version}</artifactId>
+        </dependency>
+
+        <!-- flink-connector-kafka -->
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-connector-kafka_${scala.binary.version}</artifactId>
         </dependency>
     </dependencies>
 
