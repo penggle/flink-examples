@@ -21,7 +21,7 @@ public class BasicTransformExample {
         LocalDate nowDate = LocalDate.now();
         //1、创建执行上下文环境
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
-        env.setParallelism(4); //设置全局并行度
+        env.setParallelism(4); //设置全局并行度(默认分区数)
         //2、从集合中构造数据源并做Map转换
         DataStream<String> dataStreamSource = env.fromCollection(getBirthdayList())
                 .filter(date -> date.getMonth().equals(nowDate.getMonth())) //只取当月生日的

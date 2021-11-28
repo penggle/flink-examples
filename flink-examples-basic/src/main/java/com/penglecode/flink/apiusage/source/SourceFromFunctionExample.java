@@ -21,7 +21,7 @@ public class SourceFromFunctionExample {
     public static void main(String[] args) throws Exception {
         //1、创建执行上下文环境
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
-        env.setParallelism(4); //设置全局并行度
+        env.setParallelism(4); //设置全局并行度(默认分区数)
         //2、从SourceFunction中源源不断的读取数据源
         DataStream<SensorReading> dataStreamSource = env.addSource(new SensorReadingSourceFunction());
         //3、输出数据流处理结果

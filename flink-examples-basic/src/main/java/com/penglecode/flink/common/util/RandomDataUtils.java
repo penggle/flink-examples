@@ -43,7 +43,7 @@ public class RandomDataUtils {
             String studentName = "学生" + i;
             String studentSex = SEXES.get(RANDOM.nextInt(sexSize));
             for(String courseName : COURSES) {
-                dataList.add(new StudentScore(studentId, studentName, studentSex, courseName, RANDOM.nextInt(100)));
+                dataList.add(new StudentScore(studentId, studentName, studentSex, courseName, 40 + RANDOM.nextInt(60)));
             }
         }
         return dataList;

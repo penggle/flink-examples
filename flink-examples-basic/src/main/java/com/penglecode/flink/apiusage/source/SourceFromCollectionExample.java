@@ -22,7 +22,7 @@ public class SourceFromCollectionExample {
     public static void main(String[] args) throws Exception {
         //1、创建执行上下文环境
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
-        env.setParallelism(4); //设置全局并行度
+        env.setParallelism(4); //设置全局并行度(默认分区数)
         //2、从集合中读取数据源
         DataStream<SensorReading> dataStreamSource1 = env.fromCollection(getTempSensorReadings(), TypeInformation.of(SensorReading.class));
 

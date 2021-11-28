@@ -33,7 +33,7 @@ public class AggregationTransformExample {
     public static void maxRollAggregatingTest1() throws Exception {
         //1、创建执行上下文环境
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
-        env.setParallelism(1); //设置全局并行度
+        env.setParallelism(1); //设置全局并行度(默认分区数)
         //2、从集合中构造数据源并做Map转换
         DataStream<SensorReading> dataStreamSource = env.fromCollection(getStaticSensorReadings())
                 .map(SensorReading::valueOf)
@@ -52,7 +52,7 @@ public class AggregationTransformExample {
     public static void maxRollAggregatingTest2() throws Exception {
         //1、创建执行上下文环境
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
-        env.setParallelism(4); //设置全局并行度
+        env.setParallelism(4); //设置全局并行度(默认分区数)
         //2、从集合中构造数据源并做Map转换
         DataStream<SensorReading> dataStreamSource = env.fromCollection(RandomDataUtils.getRandomSensorReadings())
                 .map(SensorReading::valueOf)
@@ -79,7 +79,7 @@ public class AggregationTransformExample {
     public static void maxByRollAggregatingTest() throws Exception {
         //1、创建执行上下文环境
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
-        env.setParallelism(1); //设置全局并行度
+        env.setParallelism(1); //设置全局并行度(默认分区数)
         //2、从集合中构造数据源并做Map转换
         DataStream<SensorReading> dataStreamSource = env.fromCollection(getStaticSensorReadings())
                 .map(SensorReading::valueOf)
@@ -98,7 +98,7 @@ public class AggregationTransformExample {
     public static void avgByReduceRollAggregatingTest() throws Exception {
         //1、创建执行上下文环境
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
-        env.setParallelism(4); //设置全局并行度
+        env.setParallelism(4); //设置全局并行度(默认分区数)
         //2、从集合中构造数据源并做Map转换
         DataStream<SensorReading> dataStreamSource = env.fromCollection(getStaticSensorReadings())
                 .map(SensorReading::valueOf)
