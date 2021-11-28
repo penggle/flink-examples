@@ -1,7 +1,7 @@
 package com.penglecode.flink.apiusage.function;
 
 import com.penglecode.flink.common.model.Joke;
-import com.penglecode.flink.common.util.OpenApiClient;
+import com.penglecode.flink.common.support.OpenApiClient;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.flink.streaming.api.functions.source.SourceFunction;
 

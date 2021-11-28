@@ -3,6 +3,8 @@ package com.penglecode.flink.common.model;
 import java.io.Serializable;
 
 /**
+ * 段子
+ *
  * @author pengpeng
  * @version 1.0
  * @since 2021/11/26 22:37

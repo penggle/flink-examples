@@ -1,8 +1,8 @@
-package com.penglecode.flink.common.util;
+package com.penglecode.flink.common.support;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.penglecode.flink.common.model.Joke;
-import com.penglecode.flink.common.support.OpenApiResult;
+import com.penglecode.flink.common.util.JsonUtils;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
